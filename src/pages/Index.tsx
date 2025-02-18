@@ -208,7 +208,7 @@ const Index = () => {
                 Enjoy additional features and personalized notifications.
               </p>
               <button
-                onClick={() => window.open('https://taranathtantrik.bohurupi.com/apk', '_blank')}
+                onClick={() => window.open('https://apk.bohurupi.com/download/taranath-tantrik.apk', '_blank')}
                 className="w-full py-2 px-4 bg-mystic-600 hover:bg-mystic-700 text-white rounded-lg transition-colors duration-200 flex items-center justify-center"
               >
                 <Download className="w-4 h-4 mr-2" />
