@@ -194,23 +194,23 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
         {/* Main Content */}
         <div className="space-y-4">
           {/* Summary Card */}
-          <div className="bg-white/90 rounded-lg shadow-sm overflow-hidden border border-gray-100">
-            <div className="px-4 py-3 bg-gradient-to-r from-indigo-50/50 to-purple-50/50 border-b border-slate-200/30">
+          <div className="bg-white/95 rounded-lg shadow-lg overflow-hidden border border-indigo-100">
+            <div className="px-4 py-3 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-indigo-500/5 border-b border-indigo-100/30">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-indigo-100/80 flex items-center justify-center shadow-md backdrop-blur-sm">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center shadow-md backdrop-blur-sm border border-indigo-200/20">
                   <Hand className="w-5 h-5 text-indigo-600/90 animate-pulse" />
                 </div>
-                <h2 className="text-lg font-bold text-indigo-800/90">Palm Reading Summary</h2>
+                <h2 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-purple-700">Palm Reading Summary</h2>
               </div>
             </div>
 
             {/* Summary Content */}
             {sections.length > 0 && (
-              <div className="p-4">
+              <div className="p-4 sm:p-6">
                 <Markdown
                   {...{
                     ...markdownProps,
-                    className: "prose prose-slate prose-sm max-w-none prose-headings:text-indigo-900/90 prose-p:text-slate-700/90"
+                    className: "prose prose-xs max-w-none text-sm leading-relaxed space-y-2 prose-headings:text-indigo-900/90 prose-headings:text-base prose-p:text-slate-700/90 prose-p:text-xs prose-strong:text-indigo-700 prose-strong:text-xs prose-em:text-purple-600 prose-em:text-xs prose-li:text-slate-700 prose-li:text-xs prose-ul:space-y-1 prose-ol:space-y-1 prose-ul:my-1 prose-ol:my-1"
                   }}
                 >
                   {sections[0].content}

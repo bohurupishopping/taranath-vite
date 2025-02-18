@@ -191,10 +191,19 @@ const Index = () => {
                 Begin your journey of self-discovery today with our free Vedic palmistry service. Understand your past, navigate your present, and shape your future with the wisdom of your palms.
               </p>
               <p className="text-sm text-mystic-700 mt-2">
-                Visit Bohurupi Shopping & Eso Golpo Kori to start exploring your destiny now!
+                Special thanks to our sponsor{' '}
+                <a 
+                  href="https://bohurupi.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-mystic-600 hover:text-mystic-800 underline"
+                >
+                  Bohurupi Shopping & Eso Golpo Kori
+                </a>
+                {' '}for making this service accessible to everyone!
               </p>
               <p className="text-sm text-mystic-700">
-                Book Your Free Reading Today
+                Check Your Free Reading Today
               </p>
               
             </div>
