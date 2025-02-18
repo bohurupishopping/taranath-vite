@@ -43,29 +43,29 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
 
   // Enhanced markdown props with better styling and list support
   const markdownProps = {
-    className: "prose prose-sm max-w-none text-gray-700 leading-relaxed",
+    className: "prose prose-sm max-w-none text-gray-700 leading-normal",
     remarkPlugins: [remarkGfm],
     components: {
       p: ({ node, ...props }: any) => (
-        <p className="mb-3 text-gray-700" style={{ whiteSpace: 'pre-line' }} {...props} />
+        <p className="mb-2 text-gray-700 text-sm" style={{ whiteSpace: 'pre-line' }} {...props} />
       ),
       strong: ({ node, ...props }: any) => (
-        <strong className="font-semibold text-indigo-700" {...props} />
+        <strong className="font-semibold text-indigo-700 text-sm" {...props} />
       ),
       em: ({ node, ...props }: any) => (
-        <em className="italic text-indigo-600" {...props} />
+        <em className="italic text-indigo-600 text-sm" {...props} />
       ),
       ol: ({ node, ...props }: any) => (
-        <ol className="list-decimal list-inside space-y-2 my-4" {...props} />
+        <ol className="list-decimal list-inside space-y-1 my-2 text-sm" {...props} />
       ),
       ul: ({ node, ...props }: any) => (
-        <ul className="list-disc list-inside space-y-2 my-4" {...props} />
+        <ul className="list-disc list-inside space-y-1 my-2 text-sm" {...props} />
       ),
       li: ({ node, ...props }: any) => (
-        <li className="ml-4" {...props} />
+        <li className="ml-2 text-sm" {...props} />
       ),
       blockquote: ({ node, ...props }: any) => (
-        <blockquote className="border-l-4 border-indigo-200 pl-4 my-4 italic text-gray-600" {...props} />
+        <blockquote className="border-l-4 border-indigo-200 pl-3 my-2 italic text-gray-600 text-sm" {...props} />
       ),
     },
   };
@@ -160,57 +160,57 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-200 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-50 py-4 px-3 sm:px-4 backdrop-blur-sm">
+      <div className="max-w-4xl mx-auto space-y-4">
         {/* Header Section */}
-        <div className="flex items-center justify-between gap-3 bg-white/80 backdrop-blur-sm p-3 rounded-2xl shadow-lg">
+        <div className="flex items-center justify-between gap-2 bg-white/60 backdrop-blur-md p-3 rounded-xl shadow-lg border border-white/20">
           <button
             onClick={onBack}
-            className="bg-red-500 hover:bg-red-600 text-white p-2.5 rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+            className="bg-red-400/90 hover:bg-red-500/90 text-white p-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 backdrop-blur-sm"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-4 h-4" />
           </button>
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 text-center">
+          <h1 className="text-lg sm:text-xl font-bold text-slate-800/90 text-center">
             Your Palm Reading
           </h1>
-          <div className="flex gap-1.5">
+          <div className="flex gap-2">
             <button
               onClick={handleShareAsText}
-              className="p-2.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 tooltip"
+              className="p-2 bg-indigo-400/90 hover:bg-indigo-500/90 text-white rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 backdrop-blur-sm tooltip"
               title="Share as Text"
             >
-              <Share2 className="w-5 h-5" />
+              <Share2 className="w-4 h-4" />
             </button>
             <button
               onClick={handleDownloadPDF}
-              className="p-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 tooltip"
+              className="p-2 bg-emerald-400/90 hover:bg-emerald-500/90 text-white rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 backdrop-blur-sm tooltip"
               title="Download PDF"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-4 h-4" />
             </button>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Summary Card */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
-            <div className="px-6 py-5 bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-slate-200">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center shadow-md">
-                  <Hand className="w-6 h-6 text-indigo-600 animate-pulse" />
+          <div className="bg-white/60 backdrop-blur-md rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-white/20">
+            <div className="px-4 py-3 bg-gradient-to-r from-indigo-50/50 to-purple-50/50 border-b border-slate-200/30">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-indigo-100/80 flex items-center justify-center shadow-md backdrop-blur-sm">
+                  <Hand className="w-5 h-5 text-indigo-600/90 animate-pulse" />
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-indigo-800">Palm Reading Summary</h2>
+                <h2 className="text-lg font-bold text-indigo-800/90">Palm Reading Summary</h2>
               </div>
             </div>
 
             {/* Summary Content */}
             {sections.length > 0 && (
-              <div className="p-6">
+              <div className="p-4">
                 <Markdown
                   {...{
                     ...markdownProps,
-                    className: "prose prose-slate prose-sm sm:prose-base lg:prose-lg max-w-none"
+                    className: "prose prose-slate prose-sm max-w-none prose-headings:text-indigo-900/90 prose-p:text-slate-700/90"
                   }}
                 >
                   {sections[0].content}
@@ -220,30 +220,30 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
           </div>
 
           {/* Collapsible Sections */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {sections.slice(1).map((section, index) => (
               <Collapsible key={index}>
                 <CollapsibleTrigger asChild>
                   <button className="w-full group">
-                    <div className="flex items-center justify-between p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] group-data-[state=open]:bg-slate-50">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-center justify-between p-3 bg-white/60 backdrop-blur-md rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] group-data-[state=open]:bg-slate-50/80 border border-white/20">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-blue-100/80 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 backdrop-blur-sm">
                           {getSectionIcon(section.title)}
                         </div>
-                        <span className="text-base sm:text-lg font-semibold text-slate-800">
+                        <span className="text-base font-semibold text-slate-800/90">
                           {section.title}
                         </span>
                       </div>
-                      <ChevronIcon className="w-6 h-6 text-slate-500 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                      <ChevronIcon className="w-5 h-5 text-slate-500/90 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                     </div>
                   </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <div className="px-6 py-5 mt-2 bg-white rounded-xl shadow-md">
+                  <div className="px-4 py-3 mt-2 bg-white/60 backdrop-blur-md rounded-xl shadow-md border border-white/20">
                     <Markdown
                       {...{
                         ...markdownProps,
-                        className: "prose prose-slate prose-sm sm:prose-base max-w-none"
+                        className: "prose prose-slate prose-sm max-w-none prose-headings:text-indigo-900/90 prose-p:text-slate-700/90"
                       }}
                     >
                       {section.content}

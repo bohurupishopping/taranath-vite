@@ -159,13 +159,16 @@ const Index = () => {
             <div className="bg-white rounded-2xl p-4 mb-4 shadow-lg border border-mystic-200/50 animate-fade-in">
               <h3 className="font-semibold text-lg text-mystic-800 mb-2">About Taranath Tantrik</h3>
               <p className="text-sm text-mystic-700">
-                Unlock the secrets of your destiny with our free Vedic palmistry service, an ancient art that interprets the lines and symbols on your palms to provide profound insights into your life's journey. At Bohurupi Shopping & Eso Golpo Kori, we offer personalized Vedic palm readings, guiding you towards self-discovery and informed decision-making.
+                Experience the captivating blend of ancient palmistry wisdom and modern technology with our unique application. Leveraged by advanced AI, this tool meticulously analyzes your palm images to provide personalized insights, drawing from the extensive knowledge of the legendary palmist William John Warner (Cheiro) and other esteemed experts in the field.
+              </p>
+              <p className="text-sm text-mystic-700 mt-2">
+                Dive into the ancient art of Vedic palmistry, where the lines and symbols on your palms reveal profound insights into your life's path. At Bohurupi Shopping & Eso Golpo Kori, we offer personalized Vedic palm readings, guiding you towards self-discovery and informed decision-making.
               </p>
               <p className="text-sm text-mystic-700 mt-2">
                 <b>Who is Taranath Tantrik?</b>
               </p>
               <p className="text-sm text-mystic-700">
-                Taranath Tantrik is a fictional character created by renowned Bengali author Bibhutibhushan Bandyopadhyay. Portrayed as a mystic and practitioner of the occult, Taranath shares his supernatural experiences with friends in his Kolkata residence. While Taranath himself is a literary figure, our app brings his wisdom to life by collaborating with esteemed palmists, including the legendary Cheiro.
+                Taranath Tantrik is a fictional character created by renowned Bengali author Bibhutibhushan Bandyopadhyay. Portrayed as a mystic and practitioner of the occult, while Taranath himself is a literary figure, our app brings his wisdom to life by collaborating with esteemed palmists, including the legendary Cheiro.
               </p>
               <p className="text-sm text-mystic-700 mt-2">
                 <b>Meet Cheiro</b>
@@ -177,16 +180,23 @@ const Index = () => {
                 <b>Why Choose Our Vedic Palm Reading Services?</b>
               </p>
               <ul className="list-disc list-inside text-sm text-mystic-700">
-                <li>Personalized Consultations: Each session is tailored to address your specific questions and concerns.</li>
-                <li>Authentic Practices: We adhere to traditional Vedic methodologies, ensuring a genuine and enriching experience.</li>
-                <li>Holistic Insights: Gain a deeper understanding of your life's path, challenges, and opportunities.</li>
+                <li>Free Vedic Palm Reading: Discover the secrets etched in your palms.</li>
+                <li>Personalized Insights: Tailored interpretations for your unique life journey.</li>
+                <li>Guidance for Self-Discovery: Navigate your life with confidence through our detailed readings.</li>
+                <li>Expert Knowledge: Access insights from the teachings of Cheiro and other renowned palmists.</li>
+                <li>Cutting-Edge Technology: Get accurate readings with the help of AI-powered analysis.</li>
+                <li>Comprehensive Guidance: Make informed decisions with insights into your personality, career, relationships, and more.</li>
               </ul>
               <p className="text-sm text-mystic-700 mt-2">
-                Book Your Free Reading Today
+                Begin your journey of self-discovery today with our free Vedic palmistry service. Understand your past, navigate your present, and shape your future with the wisdom of your palms.
+              </p>
+              <p className="text-sm text-mystic-700 mt-2">
+                Visit Bohurupi Shopping & Eso Golpo Kori to start exploring your destiny now!
               </p>
               <p className="text-sm text-mystic-700">
-                Embark on a journey of self-discovery and enlightenment. Unveil the mysteries etched in your palms and take control of your destiny.
+                Book Your Free Reading Today
               </p>
+              
             </div>
           )}
 
@@ -238,7 +248,7 @@ const Index = () => {
                   {/* Birth Year Input */}
                   <div className="sm:col-span-1">
                     <label className="block text-sm font-medium text-mystic-700">
-                      Year of Birth
+                      Year of Birth (Optional)
                     </label>
                     <input
                       type="number"
@@ -306,7 +316,7 @@ const Index = () => {
                   {/* Rashi Select */}
                   <div className="space-y-1">
                     <label className="block text-sm font-medium text-mystic-700">
-                      Zodiac Sign
+                      Zodiac Sign (Optional)
                     </label>
                     <div className="relative">
                       <select
@@ -373,6 +383,11 @@ const Index = () => {
               </button>
             </div>
           </form>
+
+          {/* Disclaimer */}
+          <div className="mt-4 text-center text-xs text-mystic-500/80">
+            Disclaimer: We do not collect or store any data. Some information may be inaccurate due to technical limitations.
+          </div>
         </div>
       </div>
     </>

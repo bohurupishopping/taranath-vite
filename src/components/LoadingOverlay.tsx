@@ -12,10 +12,21 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ isLoading }) => {
 
     return (
         <div className={styles.overlay}>
-            <div className={styles.spinner}></div>
+            <div className={styles.spinner}>
+                {/* Orbital rings with icons */}
+                <div className={styles.orbit}>
+                    <div className={styles.icon} />
+                </div>
+                <div className={styles.orbit}>
+                    <div className={styles.icon} />
+                </div>
+                <div className={styles.orbit}>
+                    <div className={styles.icon} />
+                </div>
+            </div>
             <p className={styles.loadingText}>Generating Reading...</p>
         </div>
     );
 };
 
-export default LoadingOverlay; 
+export default LoadingOverlay;
