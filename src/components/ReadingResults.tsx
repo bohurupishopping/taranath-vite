@@ -160,13 +160,13 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-50 py-4 px-3 sm:px-4 backdrop-blur-sm">
+    <div className="min-h-screen bg-gray-50 py-2 px-2 sm:px-3">
       <div className="max-w-4xl mx-auto space-y-4">
         {/* Header Section */}
-        <div className="flex items-center justify-between gap-2 bg-white/60 backdrop-blur-md p-3 rounded-xl shadow-lg border border-white/20">
+        <div className="flex items-center justify-between gap-2 bg-white/90 p-3 rounded-lg shadow-sm border border-gray-100">
           <button
             onClick={onBack}
-            className="bg-red-400/90 hover:bg-red-500/90 text-white p-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 backdrop-blur-sm"
+            className="bg-red-400 text-white p-2 rounded-lg shadow-sm"
           >
             <ArrowLeft className="w-4 h-4" />
           </button>
@@ -176,14 +176,14 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
           <div className="flex gap-2">
             <button
               onClick={handleShareAsText}
-              className="p-2 bg-indigo-400/90 hover:bg-indigo-500/90 text-white rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 backdrop-blur-sm tooltip"
+              className="p-2 bg-indigo-400/90 text-white rounded-lg shadow-sm"
               title="Share as Text"
             >
               <Share2 className="w-4 h-4" />
             </button>
             <button
               onClick={handleDownloadPDF}
-              className="p-2 bg-emerald-400/90 hover:bg-emerald-500/90 text-white rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 backdrop-blur-sm tooltip"
+              className="p-2 bg-emerald-400/90 text-white rounded-lg shadow-sm"
               title="Download PDF"
             >
               <Download className="w-4 h-4" />
@@ -194,7 +194,7 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
         {/* Main Content */}
         <div className="space-y-4">
           {/* Summary Card */}
-          <div className="bg-white/60 backdrop-blur-md rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-white/20">
+          <div className="bg-white/90 rounded-lg shadow-sm overflow-hidden border border-gray-100">
             <div className="px-4 py-3 bg-gradient-to-r from-indigo-50/50 to-purple-50/50 border-b border-slate-200/30">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-indigo-100/80 flex items-center justify-center shadow-md backdrop-blur-sm">
@@ -225,9 +225,9 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
               <Collapsible key={index}>
                 <CollapsibleTrigger asChild>
                   <button className="w-full group">
-                    <div className="flex items-center justify-between p-3 bg-white/60 backdrop-blur-md rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] group-data-[state=open]:bg-slate-50/80 border border-white/20">
+                    <div className="flex items-center justify-between p-3 bg-white/90 rounded-lg shadow-sm group-data-[state=open]:bg-gray-50 border border-gray-100">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-blue-100/80 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 backdrop-blur-sm">
+                        <div className="w-8 h-8 rounded-md bg-blue-100 flex items-center justify-center">
                           {getSectionIcon(section.title)}
                         </div>
                         <span className="text-base font-semibold text-slate-800/90">
@@ -239,7 +239,7 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
                   </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <div className="px-4 py-3 mt-2 bg-white/60 backdrop-blur-md rounded-xl shadow-md border border-white/20">
+                  <div className="px-4 py-3 mt-2 bg-white/90 rounded-lg shadow-sm border border-gray-100">
                     <Markdown
                       {...{
                         ...markdownProps,
