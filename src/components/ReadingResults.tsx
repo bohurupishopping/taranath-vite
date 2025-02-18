@@ -41,23 +41,31 @@ const NOTO_SANS_BENGALI_BOLD = '/fonts/NotoSansBengali-Bold.ttf';
 const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
   const sections = parseReadingText(readingText);
 
+  // Enhanced markdown props with better styling and list support
   const markdownProps = {
-    className: "text-gray-700 text-sm leading-relaxed overflow-hidden",
-    style: {
-      display: '-webkit-box',
-      WebkitLineClamp: 5,
-      WebkitBoxOrient: 'vertical',
-    },
+    className: "prose prose-sm max-w-none text-gray-700 leading-relaxed",
     remarkPlugins: [remarkGfm],
     components: {
       p: ({ node, ...props }: any) => (
-        <p style={{ whiteSpace: 'pre-line' }} {...props} />
+        <p className="mb-3 text-gray-700" style={{ whiteSpace: 'pre-line' }} {...props} />
       ),
       strong: ({ node, ...props }: any) => (
-        <strong style={{ color: '#6B46C1' }} {...props} />
+        <strong className="font-semibold text-indigo-700" {...props} />
       ),
       em: ({ node, ...props }: any) => (
-        <em style={{ fontStyle: 'italic', color: '#6B46C1' }} {...props} />
+        <em className="italic text-indigo-600" {...props} />
+      ),
+      ol: ({ node, ...props }: any) => (
+        <ol className="list-decimal list-inside space-y-2 my-4" {...props} />
+      ),
+      ul: ({ node, ...props }: any) => (
+        <ul className="list-disc list-inside space-y-2 my-4" {...props} />
+      ),
+      li: ({ node, ...props }: any) => (
+        <li className="ml-4" {...props} />
+      ),
+      blockquote: ({ node, ...props }: any) => (
+        <blockquote className="border-l-4 border-indigo-200 pl-4 my-4 italic text-gray-600" {...props} />
       ),
     },
   };
@@ -152,30 +160,30 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F7F7F7] to-[#C8CED6] py-6">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-200 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto space-y-8">
+        {/* Header Section */}
+        <div className="flex items-center justify-between gap-3 bg-white/80 backdrop-blur-sm p-3 rounded-2xl shadow-lg">
           <button
             onClick={onBack}
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-md transition-colors duration-300"
+            className="bg-red-500 hover:bg-red-600 text-white p-2.5 rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <h1 className="text-2xl font-semibold text-gray-800 shadow-md rounded-full px-4 py-2 bg-white/80 backdrop-blur-sm">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 text-center">
             Your Palm Reading
           </h1>
-          <div className="flex gap-2">
+          <div className="flex gap-1.5">
             <button
               onClick={handleShareAsText}
-              className="p-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-full shadow-md transition-colors duration-300 tooltip"
+              className="p-2.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 tooltip"
               title="Share as Text"
             >
               <Share2 className="w-5 h-5" />
             </button>
             <button
               onClick={handleDownloadPDF}
-              className="p-2 bg-emerald-500 hover:bg-emerald-700 text-white rounded-full shadow-md transition-colors duration-300 tooltip"
+              className="p-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 tooltip"
               title="Download PDF"
             >
               <Download className="w-5 h-5" />
@@ -184,34 +192,25 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-4">
-          {/* Palm Reading Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-102">
-            <div className="px-5 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-gray-200">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center shadow-sm">
-                  <Hand className="w-5 h-5 text-indigo-600 animate-pulse" />
+        <div className="space-y-6">
+          {/* Summary Card */}
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <div className="px-6 py-5 bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-slate-200">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center shadow-md">
+                  <Hand className="w-6 h-6 text-indigo-600 animate-pulse" />
                 </div>
-                <h2 className="text-lg font-semibold text-indigo-800">Palm Reading Summary</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-indigo-800">Palm Reading Summary</h2>
               </div>
             </div>
 
-            {/* Summary */}
+            {/* Summary Content */}
             {sections.length > 0 && (
-              <div className="px-5 py-4">
+              <div className="p-6">
                 <Markdown
-                  className="text-gray-700 text-sm leading-relaxed"
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    p: ({ node, ...props }: any) => (
-                      <p style={{ whiteSpace: 'pre-line' }} {...props} />
-                    ),
-                    strong: ({ node, ...props }: any) => (
-                      <strong style={{ color: '#6B46C1' }} {...props} />
-                    ),
-                    em: ({ node, ...props }: any) => (
-                      <em style={{ fontStyle: 'italic', color: '#6B46C1' }} {...props} />
-                    ),
+                  {...{
+                    ...markdownProps,
+                    className: "prose prose-slate prose-sm sm:prose-base lg:prose-lg max-w-none"
                   }}
                 >
                   {sections[0].content}
@@ -225,34 +224,26 @@ const ReadingResults = ({ onBack, readingText }: ReadingResultsProps) => {
             {sections.slice(1).map((section, index) => (
               <Collapsible key={index}>
                 <CollapsibleTrigger asChild>
-                  <button className="w-full">
-                    <div className="flex items-center justify-between p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center shadow-sm">
+                  <button className="w-full group">
+                    <div className="flex items-center justify-between p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] group-data-[state=open]:bg-slate-50">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
                           {getSectionIcon(section.title)}
                         </div>
-                        <span className="text-left font-medium text-gray-800 text-base">
+                        <span className="text-base sm:text-lg font-semibold text-slate-800">
                           {section.title}
                         </span>
                       </div>
-                      <ChevronIcon className="w-5 h-5 text-gray-500 transition-transform duration-300" />
+                      <ChevronIcon className="w-6 h-6 text-slate-500 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                     </div>
                   </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <div className="px-5 py-4 bg-white rounded-xl text-gray-700 text-sm leading-relaxed">
+                  <div className="px-6 py-5 mt-2 bg-white rounded-xl shadow-md">
                     <Markdown
-                      remarkPlugins={[remarkGfm]}
-                      components={{
-                        p: ({ node, ...props }: any) => (
-                          <p style={{ whiteSpace: 'pre-line' }} {...props} />
-                        ),
-                        strong: ({ node, ...props }: any) => (
-                          <strong style={{ color: '#6B46C1' }} {...props} />
-                        ),
-                        em: ({ node, ...props }: any) => (
-                          <em style={{ fontStyle: 'italic', color: '#6B46C1' }} {...props} />
-                        ),
+                      {...{
+                        ...markdownProps,
+                        className: "prose prose-slate prose-sm sm:prose-base max-w-none"
                       }}
                     >
                       {section.content}

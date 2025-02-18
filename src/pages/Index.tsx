@@ -126,9 +126,23 @@ const Index = () => {
           <div className="text-center mb-4 sm:mb-8 animate-fade-in relative">
             <div className="mb-4 flex items-center justify-center space-x-2">
               <div className="h-1 w-8 bg-mystic-400 rounded-full" />
+              <button 
+                onClick={toggleDownloadSection}
+                className="p-2 text-mystic-500 hover:text-mystic-700 transition-colors duration-200"
+                title="Download App"
+              >
+                <Download className="w-5 h-5 stroke-2" />
+              </button>
               <h1 className="text-3xl font-bold text-mystic-800 tracking-tight">
                 Taranath Tantrik
               </h1>
+              <button 
+                onClick={toggleSeoCard}
+                className="p-2 text-mystic-500 hover:text-mystic-700 transition-colors duration-200"
+                title="About"
+              >
+                <HelpCircle className="w-5 h-5 stroke-2" />
+              </button>
               <div className="h-1 w-8 bg-mystic-400 rounded-full" />
             </div>
             <div className="inline-block px-4 py-1 bg-mystic-400/20 rounded-full border border-mystic-300/30">
@@ -136,19 +150,8 @@ const Index = () => {
                 Vedic Palm Analysis System
               </h2>
             </div>
-            <div className="absolute top-0 right-0 flex space-x-2">
-              <button 
-                onClick={toggleDownloadSection}
-                className="p-2 text-mystic-500 hover:text-mystic-700 transition-colors duration-200"
-              >
-                <Download className="w-5 h-5" />
-              </button>
-              <button 
-                onClick={toggleSeoCard}
-                className="p-2 text-mystic-500 hover:text-mystic-700 transition-colors duration-200"
-              >
-                <HelpCircle className="w-5 h-5" />
-              </button>
+            <div className="absolute top-0 right-0">
+             
             </div>
           </div>
 
@@ -209,7 +212,7 @@ const Index = () => {
             <div className="space-y-4 sm:space-y-6">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-mystic-200/50">
                 <h3 className="section-title text-mystic-800 mb-4">
-                  <User className="w-5 h-5 text-mystic-600" />
+                  <User className="w-5 h-5 text-mystic-600 stroke-2" />
                   <span className="ml-2">Personal Information</span>
                 </h3>
                 
@@ -295,7 +298,7 @@ const Index = () => {
               {/* Additional Details */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-mystic-200/50">
                 <h3 className="section-title text-mystic-800 mb-4">
-                  <Star className="w-5 h-5 text-mystic-600" />
+                  <Star className="w-5 h-5 text-mystic-600 stroke-2" />
                   <span className="ml-2">Reading Preferences</span>
                 </h3>
                 
@@ -365,7 +368,7 @@ const Index = () => {
                 type="submit" 
                 className="primary-button w-full py-2.5 px-4 sm:py-3.5 sm:px-6 rounded-xl bg-mystic-600 hover:bg-mystic-700 text-white font-medium transition-colors duration-200 transform hover:scale-[1.01] shadow-lg shadow-mystic-200/50 active:scale-95"
               >
-                <Star className="w-5 h-5 inline-block mr-2 -mt-0.5" />
+                <Star className="w-5 h-5 inline-block mr-2 -mt-0.5 stroke-2" />
                 Generate Full Analysis
               </button>
             </div>
