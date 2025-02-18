@@ -203,7 +203,7 @@ const Index = () => {
                 {' '}for making this service accessible to everyone!
               </p>
               <p className="text-sm text-mystic-700">
-                Check Your Free Reading Today
+For inquiries, please contact us at: <a href="mailto:pritam@bohurupi.com" className="text-mystic-600 hover:text-mystic-800 underline">pritam@bohurupi.com</a>
               </p>
               
             </div>
