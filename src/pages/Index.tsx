@@ -397,6 +397,23 @@ For inquiries, please contact us at: <a href="mailto:pritam@bohurupi.com" classN
           <div className="mt-4 text-center text-xs text-mystic-500/80">
             Disclaimer: We do not collect or store any data. Some information may be inaccurate due to technical limitations.
           </div>
+
+          {/* Product Hunt Badge */}
+          <div className="mt-6 flex justify-center">
+            <a 
+              href="https://www.producthunt.com/posts/taranath-tantrik?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-taranath&#0045;tantrik" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=917795&theme=light&t=1740583432113" 
+                alt="Taranath&#0032;Tantrik - AI&#0032;Palm&#0032;analysis&#0032;by&#0032;Bohurupi&#0032;Shopping&#0032;&#0038;&#0032;Eso&#0032;Golpo&#0032;Kori | Product Hunt" 
+                style={{ width: '250px', height: '54px' }} 
+                width="250" 
+                height="54" 
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>
